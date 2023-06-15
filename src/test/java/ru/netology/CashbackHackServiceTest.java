@@ -17,6 +17,7 @@ public class CashbackHackServiceTest {
         // проверка фактического и ожидаемого
         assertEquals(actual, expected);
     }
+
     @Test
     public void testShouldRemainIfAmountEquals0() {
         // подготовка тестовых данных
@@ -30,7 +31,7 @@ public class CashbackHackServiceTest {
     }
 
     @Test
-    public void testShouldNotRemainIfAmountEqual1000(){
+    public void testShouldNotRemainIfAmountEqual1000() {
         // подготовка тестовых данных
         CashbackHackService service = new CashbackHackService();
         int amount = 1_000;
@@ -42,7 +43,7 @@ public class CashbackHackServiceTest {
     }
 
     @Test
-    public void testShouldNotRemainIfAmountMore1000(){
+    public void testShouldNotRemainIfAmountMore1000() {
         // подготовка тестовых данных
         CashbackHackService service = new CashbackHackService();
         int amount = 1_001;
@@ -52,13 +53,14 @@ public class CashbackHackServiceTest {
         // проверка фактического и ожидаемого
         assertEquals(actual, expected);
     }
-    @Test (expectedExceptions = IllegalArgumentException.class)
+
+    @Test(expectedExceptions = IllegalArgumentException.class)
     public void testShouldThrowExceptionIfAmountLess0() {
         // подготовка тестовых данных
         CashbackHackService service = new CashbackHackService();
         int amount = -1;
         // выполнение целевых действий
         service.remain(amount);
-}
+    }
 
 }
