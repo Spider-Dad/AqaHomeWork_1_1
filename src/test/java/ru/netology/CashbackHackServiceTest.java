@@ -1,12 +1,8 @@
 package ru.netology;
 
-import org.junit.Test;
-
-import static org.junit.Assert.*;
-
 public class CashbackHackServiceTest {
 
-    @Test
+    @org.junit.Test
     public void testShouldRemainIfAmountLess1000() {
         // подготовка тестовых данных
         CashbackHackService service = new CashbackHackService();
@@ -15,10 +11,10 @@ public class CashbackHackServiceTest {
         int actual = service.remain(amount);
         int expected = 100;
         // проверка фактического и ожидаемого
-        assertEquals(expected, actual);
+        org.junit.Assert.assertEquals(expected, actual);
     }
 
-    @Test
+    @org.junit.Test
     public void testShouldRemainIfAmountEquals0() {
         // подготовка тестовых данных
         CashbackHackService service = new CashbackHackService();
@@ -27,10 +23,10 @@ public class CashbackHackServiceTest {
         int actual = service.remain(amount);
         int expected = 1_000;
         // проверка фактического и ожидаемого
-        assertEquals(expected, actual);
+        org.junit.Assert.assertEquals(expected, actual);
     }
 
-    @Test
+    @org.junit.Test
     public void testShouldNotRemainIfAmountEqual1000() {
         // подготовка тестовых данных
         CashbackHackService service = new CashbackHackService();
@@ -39,10 +35,10 @@ public class CashbackHackServiceTest {
         int actual = service.remain(amount);
         int expected = 0;
         // проверка фактического и ожидаемого
-        assertEquals(expected, actual);
+        org.junit.Assert.assertEquals(expected, actual);
     }
 
-    @Test
+    @org.junit.Test
     public void testShouldNotRemainIfAmountMore1000() {
         // подготовка тестовых данных
         CashbackHackService service = new CashbackHackService();
@@ -51,10 +47,10 @@ public class CashbackHackServiceTest {
         int actual = service.remain(amount);
         int expected = 0;
         // проверка фактического и ожидаемого
-        assertEquals(expected, actual);
+        org.junit.Assert.assertEquals(expected, actual);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @org.junit.Test(expected = IllegalArgumentException.class)
     public void testShouldThrowExceptionIfAmountLess0() {
         // подготовка тестовых данных
         CashbackHackService service = new CashbackHackService();
